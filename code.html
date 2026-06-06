@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hidmat | O'zbekistondagi premium xizmatlar marketplace'i</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "on-primary-container": "#7c839b",
+                    "on-tertiary-fixed": "#111c2d",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-secondary-fixed": "#281900",
+                    "surface-dim": "#cbdbf5",
+                    "inverse-surface": "#213145",
+                    "tertiary": "#000000",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary-fixed": "#d8e3fb",
+                    "secondary-fixed-dim": "#f0bf6e",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-variant": "#d3e4fe",
+                    "on-surface-variant": "#45464d",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "secondary": "#7c580f",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-tertiary-container": "#79849a",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#604100",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-container": "#111c2d",
+                    "outline-variant": "#c6c6cd",
+                    "on-error-container": "#93000a",
+                    "success-emerald": "#064E3B",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#ffcc7a",
+                    "inverse-primary": "#bec6e0",
+                    "error-container": "#ffdad6",
+                    "on-background": "#0b1c30",
+                    "primary-container": "#131b2e",
+                    "accent-gold-light": "#F5E6C8",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "primary-fixed": "#dae2fd",
+                    "primary": "#000000",
+                    "outline": "#76777d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdeac",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#79550b",
+                    "surface-ivory": "#FCFBF7",
+                    "on-surface": "#0b1c30",
+                    "border-subtle": "#E2E8F0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "unit": "4px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "label-md": ["IBM Plex Sans", "sans-serif"],
+                    "headline-sm": ["Manrope", "sans-serif"],
+                    "display-lg-mobile": ["Manrope", "sans-serif"],
+                    "display-lg": ["Manrope", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "label-sm": ["IBM Plex Sans", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "headline-md": ["Manrope", "sans-serif"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 80% 20%, rgba(255, 222, 172, 0.15) 0%, transparent 40%);
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #ffdeac;
+        }
+        /* Telefon mockup */
+        .phone-mockup {
+            position: relative;
+            width: 278px;
+            height: 560px;
+            background: #0b0f1a;
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow: 0 30px 70px -20px rgba(0,0,0,.55), inset 0 0 0 2px rgba(255,255,255,.07);
+        }
+        .phone-screen-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 32px;
+            display: block;
+        }
+        /* Logo ikonkasi: 360° aylanish + yaltirash */
+        .logo-spin {
+            transform-style: preserve-3d;
+            animation: hidmatSpin 3.6s linear infinite;
+            will-change: transform, filter;
+        }
+        @keyframes hidmatSpin {
+            0%   { transform: perspective(320px) rotateY(0deg);   filter: drop-shadow(0 0 0 rgba(139,92,246,0)); }
+            42%  { filter: drop-shadow(0 0 0 rgba(139,92,246,0)); }
+            50%  { transform: perspective(320px) rotateY(180deg); filter: brightness(1.65) drop-shadow(0 0 9px rgba(167,139,250,.95)); }
+            58%  { filter: drop-shadow(0 0 0 rgba(139,92,246,0)); }
+            100% { transform: perspective(320px) rotateY(360deg); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .logo-spin { animation: none; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-primary-container/90 border-b border-subtle dark:border-outline-variant backdrop-blur-md">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a href="#" class="flex items-center gap-2">
+<img src="logo-icon.png" alt="" class="logo-spin h-9 w-auto"/>
+<img src="logo-word-dark.png" alt="Hidmat" class="h-7 w-auto"/>
+</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#about">Biz haqimizda</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-label-md text-label-md text-on-surface opacity-60">UZ/EN</span>
+<button class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md hover:bg-secondary transition-all active:opacity-80" data-scroll-waitlist>Navbatga yozilish</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden hero-gradient">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm rounded-full mb-8">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                        PREMIUM KONSIERJ XIZMATI
+                    </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                        O'zbekistondagi eng yaxshi xizmat ko'rsatuvchilar va xizmat sotib oluvchilar marketplace'i
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        Xizmatlarni Reels orqali tanlang, darhol band qiling va xavfsiz to'lang. Biz faqat tekshirilgan mutaxassislarni birlashtiramiz.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 font-label-md text-label-md font-bold hover:shadow-lg transition-all" data-scroll-waitlist>Xizmat topish</button>
+<button class="border border-primary text-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary transition-all" data-scroll-waitlist>Xizmat ko'rsatuvchi bo'lish</button>
+</div>
+</div>
+<div class="relative h-[600px] hidden md:flex items-center justify-center">
+<div class="absolute inset-0 bg-primary-container/5 rounded-full blur-3xl"></div>
+<div class="phone-mockup">
+<img class="phone-screen-img" alt="Hidmat ilovasi ko'rinishi" src="app-preview.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section id="about" class="py-24 bg-surface-ivory scroll-mt-24">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-4">Nima uchun Hidmat?</h2>
+<div class="h-1 w-20 bg-secondary mx-auto"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl mx-auto">Hidmat ikki tomonni bir joyga jamlaydi: xizmat qidirayotgan mijozlar va o'z xizmatini sotmoqchi bo'lgan mutaxassislar.</p>
+</div>
+<!-- Mijozlar uchun -->
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">person</span>
+<h3 class="font-headline-sm text-headline-sm">Mijozlar uchun</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">movie</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Reels/Stories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Xizmat sifatini ko'rmasdan turib tanlamang. Xizmat ko'rsatuvchilar ishlarini video formatda ko'ring va ishonch hosil qiling.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">calendar_month</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Onlayn Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Keraksiz qo'ng'iroqlarsiz, bir zumda o'zingizga qulay vaqtni tanlang va band qiling.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Xavfsiz To'lov</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mablag'ingiz xizmat to'liq va sifatli bajarilgandan so'nggina xizmat ko'rsatuvchiga o'tkaziladi.</p>
+</div>
+</div>
+<!-- Xizmat ko'rsatuvchilar uchun -->
+<div class="flex items-center gap-3 mb-8 mt-20">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">handyman</span>
+<h3 class="font-headline-sm text-headline-sm">Xizmat ko'rsatuvchilar uchun</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Provider 1 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Yangi mijozlar oqimi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Reklama uchun pul sarflamang. Tekshirilgan mijozlar sizni Hidmat orqali o'zi topadi va to'g'ridan-to'g'ri buyurtma beradi.</p>
+</div>
+<!-- Provider 2 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">videocam</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Mahoratingizni ko'rsating</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Reels va portfolio orqali ishlaringizni namoyish eting. Sifatli ish ko'proq buyurtma va yuqori reyting olib keladi.</p>
+</div>
+<!-- Provider 3 -->
+<div class="bento-card p-10 bg-white border border-subtle">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Kafolatlangan to'lov</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pulingiz Eskrou tizimida himoyalanadi. Xizmatni bajardingizmi — to'lov kafolatlanadi, aldanish xavfi yo'q.</p>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-secondary transition-all" data-scroll-waitlist>Xizmat ko'rsatuvchi bo'lib ro'yxatdan o'ting</button>
+</div>
+</div>
+</section>
+<!-- Problem/Solution -->
+<section class="py-24 px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1 order-2 md:order-1">
+<img class="w-full aspect-video object-cover rounded-lg" data-alt="A cinematic, wide-angle shot of a sleek, modern corporate office space in Uzbekistan with large windows and clean lines. Professional consultants are seen in a soft-focus background, engaged in quiet collaboration. The foreground is bright and minimalist, emphasizing clarity and order. The lighting is natural and high-contrast, reflecting a premium Silk Road modernism aesthetic with deep blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF7-A2epolGPX3yArPBShwsMtDfFgXllvqaZuDu8QF8AqF_LGf1RiPmZk6wKGNxqOG0E0XS6t8GE5pTTq12FLvtOuLq7XEHpK9yCf6wTiSRdi8gz-u4ILWHnrq7nNmaYbvEzLfgRD7Dr6qkPGKCuppZw_VQZoeDLWMMHmF1WNTQsFA9IgO05vHLzX6o74Zcn42eTcRyPsq5SwPPgc9xtklC4aLFqcKLZJqETJ5v7KSHY3Fvq8wPCt7Hs3FhpfQd-7lOomxWDnN-7E"/>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<h2 class="font-headline-md text-headline-md mb-6">Ishonchli mutaxassis topish endi muammo emas</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        Bozorda minglab "ustalar" bor, lekin haqiqiy professionalni ajratib olish qiyin. Hidmat bu muammoni qattiq saralash tizimi bilan hal qiladi.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md">Har bir xizmat ko'rsatuvchining hujjatlari va tajribasi tekshiriladi.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md">Shaffof reyting va faqat real mijozlar tomonidan qoldirilgan fikrlar.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md">Sifat nazorati: Agarda xizmat yoqmasa, mablag'ingiz qaytariladi.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="py-24 bg-primary-container text-white overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Asosiy yo'nalishlar</h2>
+<p class="text-on-primary-container font-body-md">Siz uchun eng yaxshilarini saralab oldik</p>
+</div>
+<a class="text-secondary-fixed hover:underline font-label-md" href="#">Hammasini ko'rish</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Category 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated home renovation scene with a focus on modern interior design. A skilled craftsman in clean workwear is meticulously finishing a minimalist wall. The lighting is warm and directional, highlighting textures of wood and plaster. The color palette is composed of ivory, midnight blue, and subtle gold accents. The atmosphere is professional, quiet, and high-quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAty2XTXJ8R3xNTQ0nuczNqv0KsKfzCgUHfZmczZlN5cRqvqaOwoxXVBjOgREZpXTM7bYncTMTlNb5DirE9IQXzIThdC0i2xSKuskI_nb-KzTpiFD1VXZli2KY9BCxo90HQeKg0wZHXYp-rmxAFYjlzxYISTqWF7VQ_aXZj53PIGg2gSBeYD7El1ZQrDbB5XZLQUT09xewThgJF0xfeMvANqd6tJkRzvbeCvHJvo0rf4A4nXi139tVn1JnwmcYYUAGou8GLou-n1II"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Ta'mirlash</div>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A luxury spa and beauty setting featuring high-end aesthetic equipment and a serene atmosphere. Soft, diffused lighting illuminates a minimalist treatment room with pristine white surfaces and gold decorative elements. The style is modern corporate elegance with a focus on hygiene and premium service. The scene is calm, inviting, and exudes a sense of elite hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtZCGlIwYwgkLOxaB2I9hta3aI25nSVv2m-eYN37QUs-Szi4jF_-KpZw0aKxmzAF8-qXkfFtvIorDW-zjvkocgx4znYD6iwrsUWgGR7fBRLKaqPnIIUKVx_Sj2oojatSMXIyNMXJpIRJ23X8WYnUGjesessPra_oTCgk5XTFNGZcLKJWUYzEe_1rJW7iJTKw--WEvGUaKb5yXg8cVuNTU9euInGTgZDX27lVk75-xqJ_AmfzPX86HjM70Cfz1diBorbyiCKaTJX4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Go'zallik</div>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An advanced educational setting showing a tutor and a student engaged in a private, high-tech learning environment. A sleek laptop and professional educational materials are on a clean, light oak desk. The background is a minimalist, modern library with organized shelves and soft lighting. The mood is intellectual, focused, and premium, using a corporate modern visual language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYtqseSZmzrmrmsUZ97ewok0IBh7aRmzmXHIgN2CF81ByuQ37vW81C5mUsFUlWL65fIulyLXrOq0ln6MfZyHbGg9-YMoF-nlm0U_ec2ME3_f_JKebeS8mdQZ_5azPEKkzIZgJDGNzo9lO7I6RSAdFhTaSxElEZnoU8jj96mWuSEfSepNlL-SJwn5bkAkMfIg__1Gf3qppWf0OOq173K_w-hd4bKZiUCMbLhzjHz5xEJXSmAXOUbLi-Y0Xm03USi3lx7cada1wMdY0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Repetitor</div>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A premium IT workspace featuring a high-performance computer setup with multiple monitors in a dark, minimalist office. Subtle blue lighting accents the sleek hardware and clean desk layout. The environment suggests top-tier professional coding or design work. The overall aesthetic is one of precision, expertise, and modern technological sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-4aBS3Z6_nFpjewemsL3Z3M2_gVyHppQM9Wemgu2Nfxh6qtK-k0QNWs_RwiZf4Rhy92GYHIvkezKXL8wtcGXlmXjF1x1jL7txV5uFjo5KRKZ9igFYHlhSGJXdenp86MI8zJlq3ZQVGhFlGM4ldJSPV7Xv0DLBkI1_PNXdc32VYOJ-U2O1e16TlstEYTNJqGfD0dCbGueAjWWDbsbFfcbMRTVFClpalDqeLKG--1RUuNq6gktr2ypOsPL-BFKhdWv6smfw3-7JkM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">IT</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-24">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md mb-12">Biz xavfsizlikni kafolatlaymiz</h2>
+<div class="flex flex-wrap justify-center gap-8">
+<div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
+<span class="material-symbols-outlined text-success-emerald text-[40px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold">Tekshirilgan mutaxassislar</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Har bir profil verifikatsiyadan o'tadi</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
+<span class="material-symbols-outlined text-secondary text-[40px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold">Xavfsiz hamyon</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Pulingiz 100% himoya ostida</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
+<span class="material-symbols-outlined text-on-primary-fixed-variant text-[40px]" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold">24/7 Qo'llab-quvvatlash</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Har qanday savolga tezkor javob</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section id="faq" class="py-24 bg-surface-container-low scroll-mt-24">
+<div class="px-margin-desktop max-w-container-max mx-auto max-w-3xl">
+<h2 class="font-headline-md text-headline-md mb-4 text-center">Tez-tez so'raladigan savollar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mb-12 max-w-2xl mx-auto">Hidmat — O'zbekistondagi premium xizmatlar marketplace'i. Quyida loyiha haqida ko'p so'raladigan savollarga javob berdik.</p>
+<div class="space-y-4">
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Hidmat nima va u qanday ishlaydi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Hidmat — mijozlarni tekshirilgan xizmat ko'rsatuvchilar bilan bog'laydigan onlayn platforma. Mijoz kerakli xizmatni Reels va portfolio orqali ko'rib tanlaydi, qulay vaqtga band qiladi va to'lovni xavfsiz amalga oshiradi. Xizmat ko'rsatuvchi esa yangi mijozlar oqimi va kafolatlangan to'lovga ega bo'ladi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Xizmatni qanday band qilaman?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            O'zingizga yoqqan xizmatni tanlang, "Band qilish" tugmasini bosing va taqvimdan qulay vaqtni belgilang. Shundan so'ng to'lovni amalga oshirishingiz mumkin.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">To'lov xavfsizligiga kafolat bormi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Ha, Hidmat tizimi "Eskrou" modelida ishlaydi. To'lov amalga oshirilgandan so'ng, pul xizmat ko'rsatuvchiga emas, Hidmatning xavfsiz hisob raqamiga tushadi va faqat xizmat yakunlanganda o'tkaziladi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Xizmat ko'rsatuvchi sifatida qanday ro'yxatdan o'taman?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            "Xizmat ko'rsatuvchi bo'lish" tugmasini bosing, o'z mutaxassisligingizni tanlang va so'rovnomani to'ldiring. Bizning menejerlarimiz 24 soat ichida siz bilan bog'lanishadi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Hidmat qaysi xizmat turlarini qamrab oladi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Boshlang'ich yo'nalishlar — ta'mirlash, go'zallik, repetitorlik va IT. Platforma rivojlangani sari yangi sohalar bosqichma-bosqich qo'shilib boradi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Loyiha qachon ishga tushadi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Hidmat hozir ishga tushishga tayyorlanmoqda. Navbatga yozilganlar platformani birinchilardan bo'lib sinab ko'radi va maxsus imtiyozlarga (keshbek, bepul taklif) ega bo'ladi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Xizmatdan foydalanish pullikmi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Mijozlar uchun ro'yxatdan o'tish va xizmat qidirish bepul. Xizmat ko'rsatuvchilardan faqat muvaffaqiyatli bajarilgan buyurtmalar uchun kichik xizmat haqi olinadi — batafsil shartlar platforma ishga tushganda e'lon qilinadi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Mobil ilova bo'ladimi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            Ha, Hidmat avvalo qulay mobil ilova sifatida ishlaydi — xizmatlarni Reels orqali ko'rish, band qilish va to'lov telefoningizda bir necha bosishda amalga oshiriladi.
+                        </div>
+</div>
+<div class="bg-white border border-subtle p-6 cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-label-md text-label-md font-bold">Xizmat sifatidan norozi bo'lsam nima bo'ladi?</h4>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+                            To'lovingiz Eskrou tizimida saqlanadi va faqat xizmat sifatli yakunlanganda o'tkaziladi. Nizo yuzaga kelsa, Hidmat qo'llab-quvvatlash xizmati masalani adolatli hal qilishda yordam beradi.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Waitlist Form -->
+<section class="py-24" id="waitlist">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-primary-container p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-white">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">Navbatga yoziling</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container">Ilk foydalanuvchilar qatorida bo'ling va xizmatlar uchun 20% gacha keshbekka ega bo'ling.</p>
+</div>
+<form class="space-y-4" id="waitlist-form" novalidate>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-firstname" name="firstName" placeholder="Ism" required type="text"/>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-lastname" name="lastName" placeholder="Familiya" required type="text"/>
+</div>
+<div>
+<select class="w-full bg-white/10 border-white/20 text-white focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-field" name="field" required>
+<option class="text-on-surface" value="" disabled selected>Soha tanlang</option>
+<option class="text-on-surface" value="Ta'mirlash">Ta'mirlash</option>
+<option class="text-on-surface" value="Go'zallik">Go'zallik</option>
+<option class="text-on-surface" value="Repetitor">Repetitor</option>
+<option class="text-on-surface" value="IT">IT</option>
+<option class="text-on-surface" value="Boshqa">Boshqa</option>
+</select>
+</div>
+<div>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-email" name="email" placeholder="Email manzilingiz" required type="email"/>
+</div>
+<div>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-contact" name="contact" placeholder="Telefon raqam yoki Telegram username" required type="text"/>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-white transition-all disabled:opacity-60 disabled:cursor-not-allowed" id="wl-submit" type="submit">Yuborish</button>
+<p class="font-body-md text-body-md hidden" id="wl-status" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-primary-container dark:bg-tertiary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<img src="logo-icon.png" alt="" class="logo-spin h-8 w-auto"/>
+<img src="logo-word-light.png" alt="Hidmat" class="h-6 w-auto"/>
+</div>
+<p class="font-body-md text-body-md text-on-primary-container">
+                    O'zbekistondagi ilk premium xizmatlar ekotizimi. Biz sifat va ishonchni birinchi o'ringa qo'yamiz.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-white font-label-md text-label-md font-bold mb-2">Marketplace</h5>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">About Us</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Merchant Portal</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Contact Support</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-white font-label-md text-label-md font-bold mb-2">Legal</h5>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Security</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Terms of Service</a>
+</div>
+<div>
+<h5 class="text-white font-label-md text-label-md font-bold mb-4">Ijtimoiy tarmoqlar</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all" href="#">IG</a>
+<a class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all" href="#">TG</a>
+<a class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all" href="#">FB</a>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/10 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-on-primary-container font-body-md text-body-md opacity-60">© 2024 Hidmat. Premium Concierge Marketplace.</div>
+</div>
+</footer>
+<script>
+        // ============================================================
+        //  WAITLIST SOZLAMASI
+        //  Google jadvalga ulash uchun pastdagi manzilni almashtiring.
+        //  (SETUP.md faylidagi qadamlarga qarang)
+        //  Bo'sh qolsa — sahifa "test rejim"da ishlaydi (ma'lumot
+        //  brauzerda saqlanadi, hech qayerga yuborilmaydi).
+        // ============================================================
+        const WAITLIST_ENDPOINT = ""; // <-- bu yerga Apps Script "Web app" URL'ini qo'ying
+
+        // Asosiy "Join Waitlist" tugmasi -> formaga silliq o'tish
+        document.querySelectorAll('[data-scroll-waitlist]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById('waitlist');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    const first = document.getElementById('wl-firstname');
+                    if (first) first.focus({ preventScroll: true });
+                }, 600);
+            });
+        });
+
+        // Forma yuborish
+        (function () {
+            const form = document.getElementById('waitlist-form');
+            if (!form) return;
+            const firstNameInput = document.getElementById('wl-firstname');
+            const lastNameInput = document.getElementById('wl-lastname');
+            const fieldInput = document.getElementById('wl-field');
+            const emailInput = document.getElementById('wl-email');
+            const contactInput = document.getElementById('wl-contact');
+            const submitBtn = document.getElementById('wl-submit');
+            const statusEl = document.getElementById('wl-status');
+
+            function showStatus(message, type) {
+                statusEl.textContent = message;
+                statusEl.classList.remove('hidden', 'text-error-container', 'text-secondary-fixed');
+                statusEl.classList.add(type === 'error' ? 'text-error-container' : 'text-secondary-fixed');
+            }
+
+            function validEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const firstName = firstNameInput.value.trim();
+                const lastName = lastNameInput.value.trim();
+                const field = fieldInput.value;
+                const email = emailInput.value.trim();
+                const contact = contactInput.value.trim();
+
+                if (!firstName) {
+                    showStatus("Iltimos, ismingizni kiriting.", 'error');
+                    firstNameInput.focus();
+                    return;
+                }
+                if (!lastName) {
+                    showStatus("Iltimos, familiyangizni kiriting.", 'error');
+                    lastNameInput.focus();
+                    return;
+                }
+                if (!field) {
+                    showStatus("Iltimos, sohani tanlang.", 'error');
+                    fieldInput.focus();
+                    return;
+                }
+                if (!validEmail(email)) {
+                    showStatus("Iltimos, to'g'ri email manzil kiriting.", 'error');
+                    emailInput.focus();
+                    return;
+                }
+                if (!contact) {
+                    showStatus("Iltimos, telefon raqam yoki Telegram username kiriting.", 'error');
+                    contactInput.focus();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Yuborilmoqda...';
+
+                const payload = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    field: field,
+                    email: email,
+                    contact: contact,
+                    timestamp: new Date().toISOString(),
+                    source: 'landing'
+                };
+
+                try {
+                    if (WAITLIST_ENDPOINT) {
+                        // Google Apps Script web app'ga yuborish.
+                        // no-cors: javobni o'qiy olmaymiz, lekin yozuv jadvalga tushadi.
+                        await fetch(WAITLIST_ENDPOINT, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                            body: JSON.stringify(payload)
+                        });
+                    } else {
+                        // TEST REJIM: brauzer xotirasiga saqlab qo'yamiz
+                        const stored = JSON.parse(localStorage.getItem('waitlist') || '[]');
+                        stored.push(payload);
+                        localStorage.setItem('waitlist', JSON.stringify(stored));
+                        console.log('[TEST REJIM] Yozildi:', payload, '| Jami:', stored.length);
+                    }
+
+                    form.reset();
+                    showStatus("Rahmat! Siz navbatga muvaffaqiyatli yozildingiz. ✓", 'success');
+                    submitBtn.textContent = 'Yozildingiz ✓';
+                } catch (err) {
+                    console.error(err);
+                    showStatus("Xatolik yuz berdi. Iltimos, birozdan so'ng qayta urinib ko'ring.", 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        })();
+
+        // Navbar soya effekti
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+
+        // FAQ ochish/yopish
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.mt-4');
+                if (!answer) return;
+                const isHidden = answer.classList.contains('hidden');
+                document.querySelectorAll('.mt-4').forEach(el => el.classList.add('hidden'));
+                if (isHidden) answer.classList.remove('hidden');
+            });
+        });
+    </script>
+</body></html>
