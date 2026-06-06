@@ -3,7 +3,7 @@
 <html class="light" lang="uz"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hidmat | O'zbekistondagi premium xizmatlar marketplace'i</title>
+<title data-i18n="page_title">Hidmat | O'zbekistondagi premium xizmatlar marketplace'i</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -120,7 +120,6 @@
             transform: translateY(-4px);
             border-color: #ffdeac;
         }
-        /* Telefon mockup */
         .phone-mockup {
             position: relative;
             width: 278px;
@@ -138,7 +137,6 @@
             border-radius: 32px;
             display: block;
         }
-        /* Logo ikonkasi: 360° aylanish + yaltirash */
         .logo-spin {
             transform-style: preserve-3d;
             animation: hidmatSpin 3.6s linear infinite;
@@ -154,44 +152,64 @@
         @media (prefers-reduced-motion: reduce) {
             .logo-spin { animation: none; }
         }
+        #lang-btn {
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid currentColor;
+            padding: 2px 10px;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+        #lang-btn:hover { opacity: 1 !important; }
     </style>
 </head>
 <body class="bg-surface text-on-surface">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-primary-container/90 border-b border-subtle dark:border-outline-variant backdrop-blur-md">
-<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a href="#" class="flex items-center gap-2">
 <img src="logo-icon.png" alt="" class="logo-spin h-9 w-auto"/>
 <img src="logo-word-dark.png" alt="Hidmat" class="h-7 w-auto"/>
 </a>
 <div class="hidden md:flex gap-8 items-center">
-<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#about">Biz haqimizda</a>
-<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#faq">FAQ</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#about" data-i18n="nav_about">Biz haqimizda</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#faq" data-i18n="nav_faq">FAQ</a>
 </div>
-<div class="flex items-center gap-6">
-<span class="font-label-md text-label-md text-on-surface opacity-60">UZ/EN</span>
-<button class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md hover:bg-secondary transition-all active:opacity-80" data-scroll-waitlist>Navbatga yozilish</button>
+<div class="flex items-center gap-3 md:gap-6">
+<button id="lang-btn" class="font-label-md text-label-md text-on-surface opacity-60">RU</button>
+<button class="hidden sm:block bg-primary text-on-primary px-6 py-3 font-label-md text-label-md hover:bg-secondary transition-all active:opacity-80" data-scroll-waitlist data-i18n="nav_waitlist_btn">Navbatga yozilish</button>
+<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+<span class="w-6 h-0.5 bg-on-surface block transition-all"></span>
+<span class="w-6 h-0.5 bg-on-surface block transition-all"></span>
+<span class="w-6 h-0.5 bg-on-surface block transition-all"></span>
+</button>
 </div>
+</div>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-subtle px-margin-mobile py-4 space-y-4">
+<a class="block font-label-md text-label-md text-on-surface hover:text-secondary transition-colors py-2" href="#about" data-i18n="nav_about">Biz haqimizda</a>
+<a class="block font-label-md text-label-md text-on-surface hover:text-secondary transition-colors py-2" href="#faq" data-i18n="nav_faq">FAQ</a>
+<button class="w-full bg-primary text-on-primary px-6 py-3 font-label-md text-label-md hover:bg-secondary transition-all" data-scroll-waitlist data-i18n="nav_waitlist_btn">Navbatga yozilish</button>
 </div>
 </nav>
 <main class="pt-20">
 <!-- Hero Section -->
-<section class="relative min-h-[870px] flex items-center overflow-hidden hero-gradient">
-<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section class="relative min-h-[600px] md:min-h-[870px] flex items-center overflow-hidden hero-gradient">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="z-10">
 <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm rounded-full mb-8">
 <span class="material-symbols-outlined text-[14px]">verified_user</span>
-                        O'zbekistondagi premium xizmatlar platformasi
-                    </div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+<span data-i18n="hero_badge">O'zbekistondagi premium xizmatlar platformasi</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight" data-i18n="hero_title">
                         O'zbekistondagi eng yaxshi xizmat ko'rsatuvchilar va xizmat sotib oluvchilar marketplace'i
                     </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg" data-i18n="hero_desc">
                         Xizmatlarni Reels orqali tanlang, darhol band qiling va xavfsiz to'lang. Biz faqat tekshirilgan mutaxassislarni birlashtiramiz.
                     </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-secondary-container text-on-secondary-container px-8 py-4 font-label-md text-label-md font-bold hover:shadow-lg transition-all" data-scroll-waitlist>Xizmat topish</button>
-<button class="border border-primary text-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary transition-all" data-scroll-waitlist>Xizmat ko'rsatuvchi bo'lish</button>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 font-label-md text-label-md font-bold hover:shadow-lg transition-all" data-scroll-waitlist data-i18n="hero_btn1">Xizmat topish</button>
+<button class="border border-primary text-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary transition-all" data-scroll-waitlist data-i18n="hero_btn2">Xizmat ko'rsatuvchi bo'lish</button>
 </div>
 </div>
 <div class="relative h-[600px] hidden md:flex items-center justify-center">
@@ -203,288 +221,288 @@
 </div>
 </section>
 <!-- Features Bento Grid -->
-<section id="about" class="py-24 bg-surface-ivory scroll-mt-24">
-<div class="px-margin-desktop max-w-container-max mx-auto">
+<section id="about" class="py-12 md:py-24 bg-surface-ivory scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="text-center mb-16">
-<h2 class="font-headline-md text-headline-md mb-4">Nima uchun Hidmat?</h2>
+<h2 class="font-headline-md text-headline-md mb-4" data-i18n="feat_title">Nima uchun Hidmat?</h2>
 <div class="h-1 w-20 bg-secondary mx-auto"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl mx-auto">Hidmat ikki tomonni bir joyga jamlaydi: xizmat qidirayotgan mijozlar va o'z xizmatini sotmoqchi bo'lgan mutaxassislar.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl mx-auto" data-i18n="feat_desc">Hidmat ikki tomonni bir joyga jamlaydi: xizmat qidirayotgan mijozlar va o'z xizmatini sotmoqchi bo'lgan mutaxassislar.</p>
 </div>
 <!-- Mijozlar uchun -->
 <div class="flex items-center gap-3 mb-8">
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">person</span>
-<h3 class="font-headline-sm text-headline-sm">Mijozlar uchun</h3>
+<h3 class="font-headline-sm text-headline-sm" data-i18n="feat_clients_title">Mijozlar uchun</h3>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Feature 1 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">movie</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Reels/Stories</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Xizmat sifatini ko'rmasdan turib tanlamang. Xizmat ko'rsatuvchilar ishlarini video formatda ko'ring va ishonch hosil qiling.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="feat1_title">Reels/Stories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="feat1_desc">Xizmat sifatini ko'rmasdan turib tanlamang. Xizmat ko'rsatuvchilar ishlarini video formatda ko'ring va ishonch hosil qiling.</p>
 </div>
 <!-- Feature 2 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">calendar_month</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Onlayn Booking</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Keraksiz qo'ng'iroqlarsiz, bir zumda o'zingizga qulay vaqtni tanlang va band qiling.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="feat2_title">Onlayn Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="feat2_desc">Keraksiz qo'ng'iroqlarsiz, bir zumda o'zingizga qulay vaqtni tanlang va band qiling.</p>
 </div>
 <!-- Feature 3 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">verified_user</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Xavfsiz To'lov</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Mablag'ingiz xizmat to'liq va sifatli bajarilgandan so'nggina xizmat ko'rsatuvchiga o'tkaziladi.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="feat3_title">Xavfsiz To'lov</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="feat3_desc">Mablag'ingiz xizmat to'liq va sifatli bajarilgandan so'nggina xizmat ko'rsatuvchiga o'tkaziladi.</p>
 </div>
 </div>
 <!-- Xizmat ko'rsatuvchilar uchun -->
-<div class="flex items-center gap-3 mb-8 mt-20">
+<div class="flex items-center gap-3 mb-8 mt-10 md:mt-20">
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">handyman</span>
-<h3 class="font-headline-sm text-headline-sm">Xizmat ko'rsatuvchilar uchun</h3>
+<h3 class="font-headline-sm text-headline-sm" data-i18n="feat_providers_title">Xizmat ko'rsatuvchilar uchun</h3>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Provider 1 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">groups</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Yangi mijozlar oqimi</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Reklama uchun pul sarflamang. Tekshirilgan mijozlar sizni Hidmat orqali o'zi topadi va to'g'ridan-to'g'ri buyurtma beradi.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="prov1_title">Yangi mijozlar oqimi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="prov1_desc">Reklama uchun pul sarflamang. Tekshirilgan mijozlar sizni Hidmat orqali o'zi topadi va to'g'ridan-to'g'ri buyurtma beradi.</p>
 </div>
 <!-- Provider 2 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">videocam</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Mahoratingizni ko'rsating</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Reels va portfolio orqali ishlaringizni namoyish eting. Sifatli ish ko'proq buyurtma va yuqori reyting olib keladi.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="prov2_title">Mahoratingizni ko'rsating</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="prov2_desc">Reels va portfolio orqali ishlaringizni namoyish eting. Sifatli ish ko'proq buyurtma va yuqori reyting olib keladi.</p>
 </div>
 <!-- Provider 3 -->
-<div class="bento-card p-10 bg-white border border-subtle">
+<div class="bento-card p-6 md:p-10 bg-white border border-subtle">
 <div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-secondary">payments</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm mb-4">Kafolatlangan to'lov</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Pulingiz Eskrou tizimida himoyalanadi. Xizmatni bajardingizmi — to'lov kafolatlanadi, aldanish xavfi yo'q.</p>
+<h3 class="font-headline-sm text-headline-sm mb-4" data-i18n="prov3_title">Kafolatlangan to'lov</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="prov3_desc">Pulingiz Eskrou tizimida himoyalanadi. Xizmatni bajardingizmi — to'lov kafolatlanadi, aldanish xavfi yo'q.</p>
 </div>
 </div>
 <div class="text-center mt-12">
-<button class="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-secondary transition-all" data-scroll-waitlist>Xizmat ko'rsatuvchi bo'lib ro'yxatdan o'ting</button>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md font-bold hover:bg-secondary transition-all" data-scroll-waitlist data-i18n="prov_cta">Xizmat ko'rsatuvchi bo'lib ro'yxatdan o'ting</button>
 </div>
 </div>
 </section>
 <!-- Problem/Solution -->
-<section class="py-24 px-margin-desktop">
+<section class="py-12 md:py-24 px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
 <div class="flex-1 order-2 md:order-1">
-<img class="w-full aspect-video object-cover rounded-lg" data-alt="A cinematic, wide-angle shot of a sleek, modern corporate office space in Uzbekistan with large windows and clean lines. Professional consultants are seen in a soft-focus background, engaged in quiet collaboration. The foreground is bright and minimalist, emphasizing clarity and order. The lighting is natural and high-contrast, reflecting a premium Silk Road modernism aesthetic with deep blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF7-A2epolGPX3yArPBShwsMtDfFgXllvqaZuDu8QF8AqF_LGf1RiPmZk6wKGNxqOG0E0XS6t8GE5pTTq12FLvtOuLq7XEHpK9yCf6wTiSRdi8gz-u4ILWHnrq7nNmaYbvEzLfgRD7Dr6qkPGKCuppZw_VQZoeDLWMMHmF1WNTQsFA9IgO05vHLzX6o74Zcn42eTcRyPsq5SwPPgc9xtklC4aLFqcKLZJqETJ5v7KSHY3Fvq8wPCt7Hs3FhpfQd-7lOomxWDnN-7E"/>
+<img class="w-full aspect-video object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF7-A2epolGPX3yArPBShwsMtDfFgXllvqaZuDu8QF8AqF_LGf1RiPmZk6wKGNxqOG0E0XS6t8GE5pTTq12FLvtOuLq7XEHpK9yCf6wTiSRdi8gz-u4ILWHnrq7nNmaYbvEzLfgRD7Dr6qkPGKCuppZw_VQZoeDLWMMHmF1WNTQsFA9IgO05vHLzX6o74Zcn42eTcRyPsq5SwPPgc9xtklC4aLFqcKLZJqETJ5v7KSHY3Fvq8wPCt7Hs3FhpfQd-7lOomxWDnN-7E"/>
 </div>
 <div class="flex-1 order-1 md:order-2">
-<h2 class="font-headline-md text-headline-md mb-6">Ishonchli mutaxassis topish endi muammo emas</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+<h2 class="font-headline-md text-headline-md mb-6" data-i18n="ps_title">Ishonchli mutaxassis topish endi muammo emas</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6" data-i18n="ps_desc">
                         Bozorda minglab "ustalar" bor, lekin haqiqiy professionalni ajratib olish qiyin. Hidmat bu muammoni qattiq saralash tizimi bilan hal qiladi.
                     </p>
 <ul class="space-y-4">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
-<span class="font-body-md text-body-md">Har bir xizmat ko'rsatuvchining hujjatlari va tajribasi tekshiriladi.</span>
+<span class="font-body-md text-body-md" data-i18n="ps_li1">Har bir xizmat ko'rsatuvchining hujjatlari va tajribasi tekshiriladi.</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
-<span class="font-body-md text-body-md">Shaffof reyting va faqat real mijozlar tomonidan qoldirilgan fikrlar.</span>
+<span class="font-body-md text-body-md" data-i18n="ps_li2">Shaffof reyting va faqat real mijozlar tomonidan qoldirilgan fikrlar.</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
-<span class="font-body-md text-body-md">Sifat nazorati: Agarda xizmat yoqmasa, mablag'ingiz qaytariladi.</span>
+<span class="font-body-md text-body-md" data-i18n="ps_li3">Sifat nazorati: Agarda xizmat yoqmasa, mablag'ingiz qaytariladi.</span>
 </li>
 </ul>
 </div>
 </div>
 </section>
 <!-- Categories -->
-<section class="py-24 bg-primary-container text-white overflow-hidden">
-<div class="px-margin-desktop max-w-container-max mx-auto">
+<section class="py-12 md:py-24 bg-primary-container text-white overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="flex justify-between items-end mb-16">
 <div>
-<h2 class="font-headline-md text-headline-md mb-2">Asosiy yo'nalishlar</h2>
-<p class="text-on-primary-container font-body-md">Siz uchun eng yaxshilarini saralab oldik</p>
+<h2 class="font-headline-md text-headline-md mb-2" data-i18n="cat_title">Asosiy yo'nalishlar</h2>
+<p class="text-on-primary-container font-body-md" data-i18n="cat_desc">Siz uchun eng yaxshilarini saralab oldik</p>
 </div>
-<a class="text-secondary-fixed hover:underline font-label-md" href="#">Hammasini ko'rish</a>
+<a class="text-secondary-fixed hover:underline font-label-md" href="#" data-i18n="cat_see_all">Hammasini ko'rish</a>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
 <!-- Category 1 -->
 <div class="group cursor-pointer">
 <div class="aspect-[3/4] overflow-hidden mb-4 relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated home renovation scene with a focus on modern interior design. A skilled craftsman in clean workwear is meticulously finishing a minimalist wall. The lighting is warm and directional, highlighting textures of wood and plaster. The color palette is composed of ivory, midnight blue, and subtle gold accents. The atmosphere is professional, quiet, and high-quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAty2XTXJ8R3xNTQ0nuczNqv0KsKfzCgUHfZmczZlN5cRqvqaOwoxXVBjOgREZpXTM7bYncTMTlNb5DirE9IQXzIThdC0i2xSKuskI_nb-KzTpiFD1VXZli2KY9BCxo90HQeKg0wZHXYp-rmxAFYjlzxYISTqWF7VQ_aXZj53PIGg2gSBeYD7El1ZQrDbB5XZLQUT09xewThgJF0xfeMvANqd6tJkRzvbeCvHJvo0rf4A4nXi139tVn1JnwmcYYUAGou8GLou-n1II"/>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAty2XTXJ8R3xNTQ0nuczNqv0KsKfzCgUHfZmczZlN5cRqvqaOwoxXVBjOgREZpXTM7bYncTMTlNb5DirE9IQXzIThdC0i2xSKuskI_nb-KzTpiFD1VXZli2KY9BCxo90HQeKg0wZHXYp-rmxAFYjlzxYISTqWF7VQ_aXZj53PIGg2gSBeYD7El1ZQrDbB5XZLQUT09xewThgJF0xfeMvANqd6tJkRzvbeCvHJvo0rf4A4nXi139tVn1JnwmcYYUAGou8GLou-n1II"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Ta'mirlash</div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white" data-i18n="cat1">Ta'mirlash</div>
 </div>
 </div>
 <!-- Category 2 -->
 <div class="group cursor-pointer">
 <div class="aspect-[3/4] overflow-hidden mb-4 relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A luxury spa and beauty setting featuring high-end aesthetic equipment and a serene atmosphere. Soft, diffused lighting illuminates a minimalist treatment room with pristine white surfaces and gold decorative elements. The style is modern corporate elegance with a focus on hygiene and premium service. The scene is calm, inviting, and exudes a sense of elite hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtZCGlIwYwgkLOxaB2I9hta3aI25nSVv2m-eYN37QUs-Szi4jF_-KpZw0aKxmzAF8-qXkfFtvIorDW-zjvkocgx4znYD6iwrsUWgGR7fBRLKaqPnIIUKVx_Sj2oojatSMXIyNMXJpIRJ23X8WYnUGjesessPra_oTCgk5XTFNGZcLKJWUYzEe_1rJW7iJTKw--WEvGUaKb5yXg8cVuNTU9euInGTgZDX27lVk75-xqJ_AmfzPX86HjM70Cfz1diBorbyiCKaTJX4"/>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtZCGlIwYwgkLOxaB2I9hta3aI25nSVv2m-eYN37QUs-Szi4jF_-KpZw0aKxmzAF8-qXkfFtvIorDW-zjvkocgx4znYD6iwrsUWgGR7fBRLKaqPnIIUKVx_Sj2oojatSMXIyNMXJpIRJ23X8WYnUGjesessPra_oTCgk5XTFNGZcLKJWUYzEe_1rJW7iJTKw--WEvGUaKb5yXg8cVuNTU9euInGTgZDX27lVk75-xqJ_AmfzPX86HjM70Cfz1diBorbyiCKaTJX4"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Go'zallik</div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white" data-i18n="cat2">Go'zallik</div>
 </div>
 </div>
 <!-- Category 3 -->
 <div class="group cursor-pointer">
 <div class="aspect-[3/4] overflow-hidden mb-4 relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An advanced educational setting showing a tutor and a student engaged in a private, high-tech learning environment. A sleek laptop and professional educational materials are on a clean, light oak desk. The background is a minimalist, modern library with organized shelves and soft lighting. The mood is intellectual, focused, and premium, using a corporate modern visual language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYtqseSZmzrmrmsUZ97ewok0IBh7aRmzmXHIgN2CF81ByuQ37vW81C5mUsFUlWL65fIulyLXrOq0ln6MfZyHbGg9-YMoF-nlm0U_ec2ME3_f_JKebeS8mdQZ_5azPEKkzIZgJDGNzo9lO7I6RSAdFhTaSxElEZnoU8jj96mWuSEfSepNlL-SJwn5bkAkMfIg__1Gf3qppWf0OOq173K_w-hd4bKZiUCMbLhzjHz5xEJXSmAXOUbLi-Y0Xm03USi3lx7cada1wMdY0"/>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYtqseSZmzrmrmsUZ97ewok0IBh7aRmzmXHIgN2CF81ByuQ37vW81C5mUsFUlWL65fIulyLXrOq0ln6MfZyHbGg9-YMoF-nlm0U_ec2ME3_f_JKebeS8mdQZ_5azPEKkzIZgJDGNzo9lO7I6RSAdFhTaSxElEZnoU8jj96mWuSEfSepNlL-SJwn5bkAkMfIg__1Gf3qppWf0OOq173K_w-hd4bKZiUCMbLhzjHz5xEJXSmAXOUbLi-Y0Xm03USi3lx7cada1wMdY0"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">Repetitor</div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white" data-i18n="cat3">Repetitor</div>
 </div>
 </div>
 <!-- Category 4 -->
 <div class="group cursor-pointer">
 <div class="aspect-[3/4] overflow-hidden mb-4 relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A premium IT workspace featuring a high-performance computer setup with multiple monitors in a dark, minimalist office. Subtle blue lighting accents the sleek hardware and clean desk layout. The environment suggests top-tier professional coding or design work. The overall aesthetic is one of precision, expertise, and modern technological sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-4aBS3Z6_nFpjewemsL3Z3M2_gVyHppQM9Wemgu2Nfxh6qtK-k0QNWs_RwiZf4Rhy92GYHIvkezKXL8wtcGXlmXjF1x1jL7txV5uFjo5KRKZ9igFYHlhSGJXdenp86MI8zJlq3ZQVGhFlGM4ldJSPV7Xv0DLBkI1_PNXdc32VYOJ-U2O1e16TlstEYTNJqGfD0dCbGueAjWWDbsbFfcbMRTVFClpalDqeLKG--1RUuNq6gktr2ypOsPL-BFKhdWv6smfw3-7JkM"/>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-4aBS3Z6_nFpjewemsL3Z3M2_gVyHppQM9Wemgu2Nfxh6qtK-k0QNWs_RwiZf4Rhy92GYHIvkezKXL8wtcGXlmXjF1x1jL7txV5uFjo5KRKZ9igFYHlhSGJXdenp86MI8zJlq3ZQVGhFlGM4ldJSPV7Xv0DLBkI1_PNXdc32VYOJ-U2O1e16TlstEYTNJqGfD0dCbGueAjWWDbsbFfcbMRTVFClpalDqeLKG--1RUuNq6gktr2ypOsPL-BFKhdWv6smfw3-7JkM"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white">IT</div>
+<div class="absolute bottom-4 left-4 font-headline-sm text-headline-sm text-white" data-i18n="cat4">IT</div>
 </div>
 </div>
 </div>
 <div class="mt-16">
-<h3 class="font-headline-sm text-headline-sm mb-6">Va yana ko'plab mashhur yo'nalishlar</h3>
+<h3 class="font-headline-sm text-headline-sm mb-6" data-i18n="more_cats_title">Va yana ko'plab mashhur yo'nalishlar</h3>
 <div class="flex flex-wrap gap-3">
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Santexnika</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Elektrik xizmati</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Konditsioner va isitish</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Mebel yig'ish</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Uy tozalash</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Ko'chish va yuk tashish</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Massaj va SPA</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Grafik dizayn</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Foto va videografiya</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Avtomobil xizmati</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Bog'bonlik</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Tadbirlar tashkil etish</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Yuridik maslahat</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Buxgalteriya</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Kiyim tikish</span>
-<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all">Pardoz-bo'yoq ishlari</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_santexnika">Santexnika</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_elektrik">Elektrik xizmati</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_konditsioner">Konditsioner va isitish</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_mebel">Mebel yig'ish</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_tozalash">Uy tozalash</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_kochish">Ko'chish va yuk tashish</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_massaj">Massaj va SPA</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_dizayn">Grafik dizayn</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_foto">Foto va videografiya</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_avto">Avtomobil xizmati</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_bogbon">Bog'bonlik</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_tadbirlar">Tadbirlar tashkil etish</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_yuridik">Yuridik maslahat</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_buxgalteriya">Buxgalteriya</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_kiyim">Kiyim tikish</span>
+<span class="px-4 py-2 border border-white/20 text-white/90 font-body-md text-body-md hover:bg-secondary hover:border-secondary transition-all" data-i18n="tag_pardoz">Pardoz-bo'yoq ishlari</span>
 </div>
 </div>
 </div>
 </section>
 <!-- Trust Section -->
-<section class="py-24">
-<div class="px-margin-desktop max-w-container-max mx-auto text-center">
-<h2 class="font-headline-md text-headline-md mb-12">Biz xavfsizlikni kafolatlaymiz</h2>
+<section class="py-12 md:py-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md mb-12" data-i18n="trust_title">Biz xavfsizlikni kafolatlaymiz</h2>
 <div class="flex flex-wrap justify-center gap-8">
 <div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
 <span class="material-symbols-outlined text-success-emerald text-[40px]" style="font-variation-settings: 'FILL' 1;">verified</span>
 <div class="text-left">
-<div class="font-label-md text-label-md font-bold">Tekshirilgan mutaxassislar</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Har bir profil verifikatsiyadan o'tadi</div>
+<div class="font-label-md text-label-md font-bold" data-i18n="trust1_title">Tekshirilgan mutaxassislar</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="trust1_desc">Har bir profil verifikatsiyadan o'tadi</div>
 </div>
 </div>
 <div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
 <span class="material-symbols-outlined text-secondary text-[40px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
 <div class="text-left">
-<div class="font-label-md text-label-md font-bold">Xavfsiz hamyon</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Pulingiz 100% himoya ostida</div>
+<div class="font-label-md text-label-md font-bold" data-i18n="trust2_title">Xavfsiz hamyon</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="trust2_desc">Pulingiz 100% himoya ostida</div>
 </div>
 </div>
 <div class="flex items-center gap-4 px-8 py-6 bg-white border border-subtle">
 <span class="material-symbols-outlined text-on-primary-fixed-variant text-[40px]" style="font-variation-settings: 'FILL' 1;">support_agent</span>
 <div class="text-left">
-<div class="font-label-md text-label-md font-bold">24/7 Qo'llab-quvvatlash</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Har qanday savolga tezkor javob</div>
+<div class="font-label-md text-label-md font-bold" data-i18n="trust3_title">24/7 Qo'llab-quvvatlash</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="trust3_desc">Har qanday savolga tezkor javob</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- FAQ Section -->
-<section id="faq" class="py-24 bg-surface-container-low scroll-mt-24">
-<div class="px-margin-desktop max-w-container-max mx-auto max-w-3xl">
-<h2 class="font-headline-md text-headline-md mb-4 text-center">Tez-tez so'raladigan savollar</h2>
-<p class="font-body-md text-body-md text-on-surface-variant text-center mb-12 max-w-2xl mx-auto">Hidmat — O'zbekistondagi premium xizmatlar marketplace'i. Quyida loyiha haqida ko'p so'raladigan savollarga javob berdik.</p>
+<section id="faq" class="py-12 md:py-24 bg-surface-container-low scroll-mt-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto max-w-3xl">
+<h2 class="font-headline-md text-headline-md mb-4 text-center" data-i18n="faq_title">Tez-tez so'raladigan savollar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mb-12 max-w-2xl mx-auto" data-i18n="faq_desc">Hidmat — O'zbekistondagi premium xizmatlar marketplace'i. Quyida loyiha haqida ko'p so'raladigan savollarga javob berdik.</p>
 <div class="space-y-4">
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Hidmat nima va u qanday ishlaydi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq1_q">Hidmat nima va u qanday ishlaydi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq1_a">
                             Hidmat — mijozlarni tekshirilgan xizmat ko'rsatuvchilar bilan bog'laydigan onlayn platforma. Mijoz kerakli xizmatni Reels va portfolio orqali ko'rib tanlaydi, qulay vaqtga band qiladi va to'lovni xavfsiz amalga oshiradi. Xizmat ko'rsatuvchi esa yangi mijozlar oqimi va kafolatlangan to'lovga ega bo'ladi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Xizmatni qanday band qilaman?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq2_q">Xizmatni qanday band qilaman?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq2_a">
                             O'zingizga yoqqan xizmatni tanlang, "Band qilish" tugmasini bosing va taqvimdan qulay vaqtni belgilang. Shundan so'ng to'lovni amalga oshirishingiz mumkin.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">To'lov xavfsizligiga kafolat bormi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq3_q">To'lov xavfsizligiga kafolat bormi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq3_a">
                             Ha, Hidmat tizimi "Eskrou" modelida ishlaydi. To'lov amalga oshirilgandan so'ng, pul xizmat ko'rsatuvchiga emas, Hidmatning xavfsiz hisob raqamiga tushadi va faqat xizmat yakunlanganda o'tkaziladi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Xizmat ko'rsatuvchi sifatida qanday ro'yxatdan o'taman?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq4_q">Xizmat ko'rsatuvchi sifatida qanday ro'yxatdan o'taman?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq4_a">
                             "Xizmat ko'rsatuvchi bo'lish" tugmasini bosing, o'z mutaxassisligingizni tanlang va so'rovnomani to'ldiring. Bizning menejerlarimiz 24 soat ichida siz bilan bog'lanishadi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Hidmat qaysi xizmat turlarini qamrab oladi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq5_q">Hidmat qaysi xizmat turlarini qamrab oladi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq5_a">
                             Boshlang'ich yo'nalishlar — ta'mirlash, go'zallik, repetitorlik va IT. Platforma rivojlangani sari yangi sohalar bosqichma-bosqich qo'shilib boradi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Loyiha qachon ishga tushadi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq6_q">Loyiha qachon ishga tushadi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq6_a">
                             Hidmat hozir ishga tushishga tayyorlanmoqda. Navbatga yozilganlar platformani birinchilardan bo'lib sinab ko'radi va maxsus imtiyozlarga (keshbek, bepul taklif) ega bo'ladi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Xizmatdan foydalanish pullikmi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq7_q">Xizmatdan foydalanish pullikmi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq7_a">
                             Mijozlar uchun ro'yxatdan o'tish va xizmat qidirish bepul. Xizmat ko'rsatuvchilardan faqat muvaffaqiyatli bajarilgan buyurtmalar uchun kichik xizmat haqi olinadi — batafsil shartlar platforma ishga tushganda e'lon qilinadi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Mobil ilova bo'ladimi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq8_q">Mobil ilova bo'ladimi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq8_a">
                             Ha, Hidmat avvalo qulay mobil ilova sifatida ishlaydi — xizmatlarni Reels orqali ko'rish, band qilish va to'lov telefoningizda bir necha bosishda amalga oshiriladi.
                         </div>
 </div>
 <div class="bg-white border border-subtle p-6 cursor-pointer group">
 <div class="flex justify-between items-center">
-<h4 class="font-label-md text-label-md font-bold">Xizmat sifatidan norozi bo'lsam nima bo'ladi?</h4>
+<h4 class="font-label-md text-label-md font-bold" data-i18n="faq9_q">Xizmat sifatidan norozi bo'lsam nima bo'ladi?</h4>
 <span class="material-symbols-outlined group-hover:rotate-180 transition-transform">expand_more</span>
 </div>
-<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block">
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant hidden group-focus-within:block" data-i18n="faq9_a">
                             To'lovingiz Eskrou tizimida saqlanadi va faqat xizmat sifatli yakunlanganda o'tkaziladi. Nizo yuzaga kelsa, Hidmat qo'llab-quvvatlash xizmati masalani adolatli hal qilishda yordam beradi.
                         </div>
 </div>
@@ -492,71 +510,71 @@
 </div>
 </section>
 <!-- Waitlist Form -->
-<section class="py-24" id="waitlist">
-<div class="px-margin-desktop max-w-container-max mx-auto">
-<div class="bg-primary-container p-12 md:p-20 relative overflow-hidden">
+<section class="py-12 md:py-24" id="waitlist">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-primary-container p-6 md:p-20 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full -mr-32 -mt-32"></div>
 <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="text-white">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">Navbatga yoziling</h2>
-<p class="font-body-lg text-body-lg text-on-primary-container">Ilk foydalanuvchilar qatorida bo'ling va xizmatlar uchun 20% gacha keshbekka ega bo'ling.</p>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6" data-i18n="wl_title">Navbatga yoziling</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container" data-i18n="wl_desc">Ilk foydalanuvchilar qatorida bo'ling va xizmatlar uchun 20% gacha keshbekka ega bo'ling.</p>
 </div>
 <form class="space-y-5" id="waitlist-form" novalidate>
 <div>
-<p class="font-label-md text-label-md text-white mb-2">Siz kimsiz?</p>
+<p class="font-label-md text-label-md text-white mb-2" data-i18n="wl_role_label">Siz kimsiz?</p>
 <div class="grid grid-cols-2 gap-3">
 <label class="cursor-pointer">
 <input type="radio" name="role" value="Xizmat sotib oluvchi" class="peer sr-only"/>
-<span class="block text-center px-3 py-3 border border-white/20 text-white/80 font-body-md text-body-md peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container peer-checked:font-bold transition-all">Xizmat sotib oluvchi</span>
+<span class="block text-center px-3 py-3 border border-white/20 text-white/80 font-body-md text-body-md peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container peer-checked:font-bold transition-all" data-i18n="wl_role1">Xizmat sotib oluvchi</span>
 </label>
 <label class="cursor-pointer">
 <input type="radio" name="role" value="Xizmat sotuvchi" class="peer sr-only"/>
-<span class="block text-center px-3 py-3 border border-white/20 text-white/80 font-body-md text-body-md peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container peer-checked:font-bold transition-all">Xizmat sotuvchi</span>
+<span class="block text-center px-3 py-3 border border-white/20 text-white/80 font-body-md text-body-md peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary-container peer-checked:font-bold transition-all" data-i18n="wl_role2">Xizmat sotuvchi</span>
 </label>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-firstname" name="firstName" placeholder="Ism" required type="text"/>
-<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-lastname" name="lastName" placeholder="Familiya" required type="text"/>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-firstname" name="firstName" data-i18n-ph="wl_ph_firstname" placeholder="Ism" required type="text"/>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-lastname" name="lastName" data-i18n-ph="wl_ph_lastname" placeholder="Familiya" required type="text"/>
 </div>
 <div>
-<p id="wl-field-label" class="font-label-md text-label-md text-white mb-2">Qaysi soha(lar) sizni qiziqtiradi?</p>
+<p id="wl-field-label" class="font-label-md text-label-md text-white mb-2" data-i18n="wl_field_label">Qaysi soha(lar) sizni qiziqtiradi?</p>
 <div class="relative" id="wl-fields-dd">
 <button type="button" id="wl-fields-toggle" class="w-full flex justify-between items-center gap-2 bg-white/10 border border-white/20 text-white p-4 font-body-md text-body-md text-left">
-<span id="wl-fields-summary" class="text-white/50 truncate">Sohalarni tanlang</span>
+<span id="wl-fields-summary" class="text-white/50 truncate" data-i18n="wl_fields_placeholder">Sohalarni tanlang</span>
 <span class="material-symbols-outlined shrink-0">expand_more</span>
 </button>
 <div id="wl-fields-panel" class="hidden absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-auto bg-primary-container border border-white/20 shadow-2xl">
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Ta'mirlash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Ta'mirlash</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Santexnika" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Santexnika</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Elektrik xizmati" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Elektrik xizmati</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Konditsioner va isitish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Konditsioner va isitish</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Mebel yig'ish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Mebel yig'ish</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Uy tozalash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Uy tozalash</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Ko'chish va yuk tashish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Ko'chish va yuk tashish</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Go'zallik va soch" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Go'zallik va soch</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Massaj va SPA" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Massaj va SPA</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Repetitorlik" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Repetitorlik</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="IT va dasturlash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">IT va dasturlash</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Grafik dizayn" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Grafik dizayn</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Foto va videografiya" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Foto va videografiya</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Avtomobil xizmati" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Avtomobil xizmati</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Bog'bonlik" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Bog'bonlik</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Tadbirlar tashkil etish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Tadbirlar tashkil etish</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Yuridik maslahat" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Yuridik maslahat</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Buxgalteriya" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Buxgalteriya</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Kiyim tikish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Kiyim tikish</span></label>
-<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Boshqa" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md">Boshqa</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Ta'mirlash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="opt_tamirlash">Ta'mirlash</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Santexnika" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_santexnika">Santexnika</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Elektrik xizmati" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_elektrik">Elektrik xizmati</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Konditsioner va isitish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_konditsioner">Konditsioner va isitish</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Mebel yig'ish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_mebel">Mebel yig'ish</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Uy tozalash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_tozalash">Uy tozalash</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Ko'chish va yuk tashish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_kochish">Ko'chish va yuk tashish</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Go'zallik va soch" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="opt_gozallik">Go'zallik va soch</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Massaj va SPA" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_massaj">Massaj va SPA</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Repetitorlik" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="opt_repetitorlik">Repetitorlik</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="IT va dasturlash" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="opt_it">IT va dasturlash</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Grafik dizayn" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_dizayn">Grafik dizayn</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Foto va videografiya" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_foto">Foto va videografiya</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Avtomobil xizmati" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_avto">Avtomobil xizmati</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Bog'bonlik" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_bogbon">Bog'bonlik</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Tadbirlar tashkil etish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_tadbirlar">Tadbirlar tashkil etish</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Yuridik maslahat" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_yuridik">Yuridik maslahat</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Buxgalteriya" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_buxgalteriya">Buxgalteriya</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Kiyim tikish" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="tag_kiyim">Kiyim tikish</span></label>
+<label class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer"><input type="checkbox" name="fields" value="Boshqa" class="w-4 h-4 accent-secondary shrink-0"/><span class="text-white font-body-md text-body-md" data-i18n="opt_boshqa">Boshqa</span></label>
 </div>
 </div>
 </div>
 <div>
-<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-email" name="email" placeholder="Email manzilingiz" required type="email"/>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-email" name="email" data-i18n-ph="wl_ph_email" placeholder="Email manzilingiz" required type="email"/>
 </div>
 <div>
-<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-contact" name="contact" placeholder="Telefon raqam yoki Telegram username" required type="text"/>
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:ring-secondary focus:border-secondary p-4 font-body-md" id="wl-contact" name="contact" data-i18n-ph="wl_ph_contact" placeholder="Telefon raqam yoki Telegram username" required type="text"/>
 </div>
-<button class="w-full bg-secondary-container text-on-secondary-container py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-white transition-all disabled:opacity-60 disabled:cursor-not-allowed" id="wl-submit" type="submit">Yuborish</button>
+<button class="w-full bg-secondary-container text-on-secondary-container py-4 font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-white transition-all disabled:opacity-60 disabled:cursor-not-allowed" id="wl-submit" type="submit" data-i18n="wl_submit">Yuborish</button>
 <p class="font-body-md text-body-md hidden" id="wl-status" role="status" aria-live="polite"></p>
 </form>
 </div>
@@ -565,31 +583,31 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-20 bg-primary-container dark:bg-tertiary-container">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<footer class="w-full py-10 md:py-20 bg-primary-container dark:bg-tertiary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="space-y-6">
 <div class="flex items-center gap-2">
 <img src="logo-icon.png" alt="" class="logo-spin h-8 w-auto"/>
 <img src="logo-word-light.png" alt="Hidmat" class="h-6 w-auto"/>
 </div>
-<p class="font-body-md text-body-md text-on-primary-container">
+<p class="font-body-md text-body-md text-on-primary-container" data-i18n="footer_desc">
                     O'zbekistondagi ilk premium xizmatlar ekotizimi. Biz sifat va ishonchni birinchi o'ringa qo'yamiz.
                 </p>
 </div>
 <div class="flex flex-col gap-4">
 <h5 class="text-white font-label-md text-label-md font-bold mb-2">Marketplace</h5>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">About Us</a>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Merchant Portal</a>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Contact Support</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_link1">About Us</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_link2">Merchant Portal</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_link3">Contact Support</a>
 </div>
 <div class="flex flex-col gap-4">
-<h5 class="text-white font-label-md text-label-md font-bold mb-2">Legal</h5>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Security</a>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Privacy Policy</a>
-<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#">Terms of Service</a>
+<h5 class="text-white font-label-md text-label-md font-bold mb-2" data-i18n="footer_legal">Legal</h5>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_sec">Security</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_pp">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-white font-body-md text-body-md hover:translate-x-1 transition-transform duration-200" href="#" data-i18n="footer_tos">Terms of Service</a>
 </div>
 <div>
-<h5 class="text-white font-label-md text-label-md font-bold mb-4">Ijtimoiy tarmoqlar</h5>
+<h5 class="text-white font-label-md text-label-md font-bold mb-4" data-i18n="footer_social">Ijtimoiy tarmoqlar</h5>
 <div class="flex gap-4">
 <a class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all" href="#">IG</a>
 <a class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary transition-all" href="#">TG</a>
@@ -597,19 +615,300 @@
 </div>
 </div>
 </div>
-<div class="mt-20 pt-8 border-t border-white/10 px-margin-desktop max-w-container-max mx-auto">
-<div class="text-on-primary-container font-body-md text-body-md opacity-60">© 2026 Hidmat. O'zbekistondagi premium xizmatlar platformasi.</div>
+<div class="mt-20 pt-8 border-t border-white/10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-on-primary-container font-body-md text-body-md opacity-60" data-i18n="footer_copyright">© 2026 Hidmat. O'zbekistondagi xizmatlar platformasi.</div>
 </div>
 </footer>
 <script>
         // ============================================================
-        //  WAITLIST SOZLAMASI
-        //  Google jadvalga ulash uchun pastdagi manzilni almashtiring.
-        //  (SETUP.md faylidagi qadamlarga qarang)
-        //  Bo'sh qolsa — sahifa "test rejim"da ishlaydi (ma'lumot
-        //  brauzerda saqlanadi, hech qayerga yuborilmaydi).
+        //  I18N — Til tizimi (UZ / RU)
         // ============================================================
-        const WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbwRGf7ZnJxnliFD2xZq_GXz6bw-MI_KogBOPzAkRwVllyt_GT3OYwCeJ7gufzxAelI/exec"; // Apps Script Web app URL
+        const T = {
+            uz: {
+                page_title: "Hidmat | O'zbekistondagi premium xizmatlar marketplace'i",
+                nav_about: "Biz haqimizda",
+                nav_faq: "FAQ",
+                nav_waitlist_btn: "Navbatga yozilish",
+                hero_badge: "O'zbekistondagi premium xizmatlar platformasi",
+                hero_title: "O'zbekistondagi eng yaxshi xizmat ko'rsatuvchilar va xizmat sotib oluvchilar marketplace'i",
+                hero_desc: "Xizmatlarni Reels orqali tanlang, darhol band qiling va xavfsiz to'lang. Biz faqat tekshirilgan mutaxassislarni birlashtiramiz.",
+                hero_btn1: "Xizmat topish",
+                hero_btn2: "Xizmat ko'rsatuvchi bo'lish",
+                feat_title: "Nima uchun Hidmat?",
+                feat_desc: "Hidmat ikki tomonni bir joyga jamlaydi: xizmat qidirayotgan mijozlar va o'z xizmatini sotmoqchi bo'lgan mutaxassislar.",
+                feat_clients_title: "Mijozlar uchun",
+                feat1_title: "Reels/Stories",
+                feat1_desc: "Xizmat sifatini ko'rmasdan turib tanlamang. Xizmat ko'rsatuvchilar ishlarini video formatda ko'ring va ishonch hosil qiling.",
+                feat2_title: "Onlayn Booking",
+                feat2_desc: "Keraksiz qo'ng'iroqlarsiz, bir zumda o'zingizga qulay vaqtni tanlang va band qiling.",
+                feat3_title: "Xavfsiz To'lov",
+                feat3_desc: "Mablag'ingiz xizmat to'liq va sifatli bajarilgandan so'nggina xizmat ko'rsatuvchiga o'tkaziladi.",
+                feat_providers_title: "Xizmat ko'rsatuvchilar uchun",
+                prov1_title: "Yangi mijozlar oqimi",
+                prov1_desc: "Reklama uchun pul sarflamang. Tekshirilgan mijozlar sizni Hidmat orqali o'zi topadi va to'g'ridan-to'g'ri buyurtma beradi.",
+                prov2_title: "Mahoratingizni ko'rsating",
+                prov2_desc: "Reels va portfolio orqali ishlaringizni namoyish eting. Sifatli ish ko'proq buyurtma va yuqori reyting olib keladi.",
+                prov3_title: "Kafolatlangan to'lov",
+                prov3_desc: "Pulingiz Eskrou tizimida himoyalanadi. Xizmatni bajardingizmi — to'lov kafolatlanadi, aldanish xavfi yo'q.",
+                prov_cta: "Xizmat ko'rsatuvchi bo'lib ro'yxatdan o'ting",
+                ps_title: "Ishonchli mutaxassis topish endi muammo emas",
+                ps_desc: 'Bozorda minglab "ustalar" bor, lekin haqiqiy professionalni ajratib olish qiyin. Hidmat bu muammoni qattiq saralash tizimi bilan hal qiladi.',
+                ps_li1: "Har bir xizmat ko'rsatuvchining hujjatlari va tajribasi tekshiriladi.",
+                ps_li2: "Shaffof reyting va faqat real mijozlar tomonidan qoldirilgan fikrlar.",
+                ps_li3: "Sifat nazorati: Agarda xizmat yoqmasa, mablag'ingiz qaytariladi.",
+                cat_title: "Asosiy yo'nalishlar",
+                cat_desc: "Siz uchun eng yaxshilarini saralab oldik",
+                cat_see_all: "Hammasini ko'rish",
+                cat1: "Ta'mirlash", cat2: "Go'zallik", cat3: "Repetitor", cat4: "IT",
+                more_cats_title: "Va yana ko'plab mashhur yo'nalishlar",
+                tag_santexnika: "Santexnika",
+                tag_elektrik: "Elektrik xizmati",
+                tag_konditsioner: "Konditsioner va isitish",
+                tag_mebel: "Mebel yig'ish",
+                tag_tozalash: "Uy tozalash",
+                tag_kochish: "Ko'chish va yuk tashish",
+                tag_massaj: "Massaj va SPA",
+                tag_dizayn: "Grafik dizayn",
+                tag_foto: "Foto va videografiya",
+                tag_avto: "Avtomobil xizmati",
+                tag_bogbon: "Bog'bonlik",
+                tag_tadbirlar: "Tadbirlar tashkil etish",
+                tag_yuridik: "Yuridik maslahat",
+                tag_buxgalteriya: "Buxgalteriya",
+                tag_kiyim: "Kiyim tikish",
+                tag_pardoz: "Pardoz-bo'yoq ishlari",
+                opt_tamirlash: "Ta'mirlash",
+                opt_gozallik: "Go'zallik va soch",
+                opt_repetitorlik: "Repetitorlik",
+                opt_it: "IT va dasturlash",
+                opt_boshqa: "Boshqa",
+                trust_title: "Biz xavfsizlikni kafolatlaymiz",
+                trust1_title: "Tekshirilgan mutaxassislar",
+                trust1_desc: "Har bir profil verifikatsiyadan o'tadi",
+                trust2_title: "Xavfsiz hamyon",
+                trust2_desc: "Pulingiz 100% himoya ostida",
+                trust3_title: "24/7 Qo'llab-quvvatlash",
+                trust3_desc: "Har qanday savolga tezkor javob",
+                faq_title: "Tez-tez so'raladigan savollar",
+                faq_desc: "Hidmat — O'zbekistondagi premium xizmatlar marketplace'i. Quyida loyiha haqida ko'p so'raladigan savollarga javob berdik.",
+                faq1_q: "Hidmat nima va u qanday ishlaydi?",
+                faq1_a: "Hidmat — mijozlarni tekshirilgan xizmat ko'rsatuvchilar bilan bog'laydigan onlayn platforma. Mijoz kerakli xizmatni Reels va portfolio orqali ko'rib tanlaydi, qulay vaqtga band qiladi va to'lovni xavfsiz amalga oshiradi. Xizmat ko'rsatuvchi esa yangi mijozlar oqimi va kafolatlangan to'lovga ega bo'ladi.",
+                faq2_q: "Xizmatni qanday band qilaman?",
+                faq2_a: 'O\'zingizga yoqqan xizmatni tanlang, "Band qilish" tugmasini bosing va taqvimdan qulay vaqtni belgilang. Shundan so\'ng to\'lovni amalga oshirishingiz mumkin.',
+                faq3_q: "To'lov xavfsizligiga kafolat bormi?",
+                faq3_a: 'Ha, Hidmat tizimi "Eskrou" modelida ishlaydi. To\'lov amalga oshirilgandan so\'ng, pul xizmat ko\'rsatuvchiga emas, Hidmatning xavfsiz hisob raqamiga tushadi va faqat xizmat yakunlanganda o\'tkaziladi.',
+                faq4_q: "Xizmat ko'rsatuvchi sifatida qanday ro'yxatdan o'taman?",
+                faq4_a: '"Xizmat ko\'rsatuvchi bo\'lish" tugmasini bosing, o\'z mutaxassisligingizni tanlang va so\'rovnomani to\'ldiring. Bizning menejerlarimiz 24 soat ichida siz bilan bog\'lanishadi.',
+                faq5_q: "Hidmat qaysi xizmat turlarini qamrab oladi?",
+                faq5_a: "Boshlang'ich yo'nalishlar — ta'mirlash, go'zallik, repetitorlik va IT. Platforma rivojlangani sari yangi sohalar bosqichma-bosqich qo'shilib boradi.",
+                faq6_q: "Loyiha qachon ishga tushadi?",
+                faq6_a: "Hidmat hozir ishga tushishga tayyorlanmoqda. Navbatga yozilganlar platformani birinchilardan bo'lib sinab ko'radi va maxsus imtiyozlarga (keshbek, bepul taklif) ega bo'ladi.",
+                faq7_q: "Xizmatdan foydalanish pullikmi?",
+                faq7_a: "Mijozlar uchun ro'yxatdan o'tish va xizmat qidirish bepul. Xizmat ko'rsatuvchilardan faqat muvaffaqiyatli bajarilgan buyurtmalar uchun kichik xizmat haqi olinadi — batafsil shartlar platforma ishga tushganda e'lon qilinadi.",
+                faq8_q: "Mobil ilova bo'ladimi?",
+                faq8_a: "Ha, Hidmat avvalo qulay mobil ilova sifatida ishlaydi — xizmatlarni Reels orqali ko'rish, band qilish va to'lov telefoningizda bir necha bosishda amalga oshiriladi.",
+                faq9_q: "Xizmat sifatidan norozi bo'lsam nima bo'ladi?",
+                faq9_a: "To'lovingiz Eskrou tizimida saqlanadi va faqat xizmat sifatli yakunlanganda o'tkaziladi. Nizo yuzaga kelsa, Hidmat qo'llab-quvvatlash xizmati masalani adolatli hal qilishda yordam beradi.",
+                wl_title: "Navbatga yoziling",
+                wl_desc: "Ilk foydalanuvchilar qatorida bo'ling va xizmatlar uchun 20% gacha keshbekka ega bo'ling.",
+                wl_role_label: "Siz kimsiz?",
+                wl_role1: "Xizmat sotib oluvchi",
+                wl_role2: "Xizmat sotuvchi",
+                wl_ph_firstname: "Ism",
+                wl_ph_lastname: "Familiya",
+                wl_field_label: "Qaysi soha(lar) sizni qiziqtiradi?",
+                wl_field_label_seller: "Qaysi sohada ishlaysiz?",
+                wl_field_label_buyer: "Qaysi sohalarda xizmat olmoqchisiz?",
+                wl_fields_placeholder: "Sohalarni tanlang",
+                wl_ph_email: "Email manzilingiz",
+                wl_ph_contact: "Telefon raqam yoki Telegram username",
+                wl_submit: "Yuborish",
+                wl_sending: "Yuborilmoqda...",
+                wl_success: "Rahmat! Siz navbatga muvaffaqiyatli yozildingiz. ✓",
+                wl_done: "Yozildingiz ✓",
+                wl_error: "Xatolik yuz berdi. Iltimos, birozdan so'ng qayta urinib ko'ring.",
+                err_role: "Iltimos, xizmat sotib oluvchi yoki sotuvchi ekaningizni tanlang.",
+                err_firstname: "Iltimos, ismingizni kiriting.",
+                err_lastname: "Iltimos, familiyangizni kiriting.",
+                err_fields: "Iltimos, kamida bitta sohani tanlang.",
+                err_email: "Iltimos, to'g'ri email manzil kiriting.",
+                err_contact: "Iltimos, telefon raqam yoki Telegram username kiriting.",
+                footer_desc: "O'zbekistondagi ilk premium xizmatlar ekotizimi. Biz sifat va ishonchni birinchi o'ringa qo'yamiz.",
+                footer_link1: "Biz haqimizda",
+                footer_link2: "Sotuvchi portali",
+                footer_link3: "Qo'llab-quvvatlash",
+                footer_legal: "Huquqiy",
+                footer_sec: "Xavfsizlik",
+                footer_pp: "Maxfiylik siyosati",
+                footer_tos: "Foydalanish shartlari",
+                footer_social: "Ijtimoiy tarmoqlar",
+                footer_copyright: "© 2026 Hidmat. O'zbekistondagi xizmatlar platformasi."
+            },
+            ru: {
+                page_title: "Hidmat | Маркетплейс премиум-услуг в Узбекистане",
+                nav_about: "О нас",
+                nav_faq: "FAQ",
+                nav_waitlist_btn: "Записаться",
+                hero_badge: "Премиум платформа услуг в Узбекистане",
+                hero_title: "Лучший маркетплейс исполнителей и заказчиков услуг в Узбекистане",
+                hero_desc: "Выбирайте услуги через Reels, бронируйте мгновенно и оплачивайте безопасно. Мы объединяем только проверенных специалистов.",
+                hero_btn1: "Найти услугу",
+                hero_btn2: "Стать исполнителем",
+                feat_title: "Почему Hidmat?",
+                feat_desc: "Hidmat объединяет две стороны: клиентов, ищущих услуги, и специалистов, готовых их предоставить.",
+                feat_clients_title: "Для клиентов",
+                feat1_title: "Reels/Stories",
+                feat1_desc: "Не выбирайте вслепую. Смотрите работы специалистов в видеоформате и убеждайтесь в качестве до заказа.",
+                feat2_title: "Онлайн-бронирование",
+                feat2_desc: "Без лишних звонков — выберите удобное время и забронируйте в один клик.",
+                feat3_title: "Безопасная оплата",
+                feat3_desc: "Деньги переводятся исполнителю только после полного и качественного выполнения услуги.",
+                feat_providers_title: "Для исполнителей",
+                prov1_title: "Поток новых клиентов",
+                prov1_desc: "Не тратьтесь на рекламу. Проверенные клиенты найдут вас через Hidmat и сделают заказ напрямую.",
+                prov2_title: "Покажите своё мастерство",
+                prov2_desc: "Демонстрируйте свои работы через Reels и портфолио. Качественная работа приносит больше заказов и высокий рейтинг.",
+                prov3_title: "Гарантированная оплата",
+                prov3_desc: "Ваши деньги защищены системой Escrow. Выполнили работу — оплата гарантирована, никакого мошенничества.",
+                prov_cta: "Зарегистрироваться как исполнитель",
+                ps_title: "Найти надёжного специалиста — больше не проблема",
+                ps_desc: 'На рынке тысячи "мастеров", но найти настоящего профессионала сложно. Hidmat решает эту проблему жёсткой системой отбора.',
+                ps_li1: "Документы и опыт каждого исполнителя проверяются.",
+                ps_li2: "Прозрачный рейтинг и отзывы только от реальных клиентов.",
+                ps_li3: "Контроль качества: если услуга не понравилась — деньги возвращаются.",
+                cat_title: "Основные направления",
+                cat_desc: "Мы отобрали лучших для вас",
+                cat_see_all: "Смотреть всё",
+                cat1: "Ремонт", cat2: "Красота", cat3: "Репетитор", cat4: "IT",
+                more_cats_title: "И ещё много популярных направлений",
+                tag_santexnika: "Сантехника",
+                tag_elektrik: "Электрика",
+                tag_konditsioner: "Кондиционер и отопление",
+                tag_mebel: "Сборка мебели",
+                tag_tozalash: "Уборка дома",
+                tag_kochish: "Переезд и грузоперевозки",
+                tag_massaj: "Массаж и СПА",
+                tag_dizayn: "Графический дизайн",
+                tag_foto: "Фото и видеосъёмка",
+                tag_avto: "Автосервис",
+                tag_bogbon: "Садоводство",
+                tag_tadbirlar: "Организация мероприятий",
+                tag_yuridik: "Юридическая консультация",
+                tag_buxgalteriya: "Бухгалтерия",
+                tag_kiyim: "Пошив одежды",
+                tag_pardoz: "Малярные работы",
+                opt_tamirlash: "Ремонт",
+                opt_gozallik: "Красота и волосы",
+                opt_repetitorlik: "Репетиторство",
+                opt_it: "IT и программирование",
+                opt_boshqa: "Другое",
+                trust_title: "Мы гарантируем безопасность",
+                trust1_title: "Проверенные специалисты",
+                trust1_desc: "Каждый профиль проходит верификацию",
+                trust2_title: "Безопасный кошелёк",
+                trust2_desc: "Ваши деньги под 100% защитой",
+                trust3_title: "Поддержка 24/7",
+                trust3_desc: "Быстрый ответ на любой вопрос",
+                faq_title: "Часто задаваемые вопросы",
+                faq_desc: "Hidmat — маркетплейс услуг в Узбекистане. Ниже мы ответили на часто задаваемые вопросы о проекте.",
+                faq1_q: "Что такое Hidmat и как он работает?",
+                faq1_a: "Hidmat — онлайн-платформа, соединяющая клиентов с проверенными исполнителями. Клиент выбирает услугу через Reels и портфолио, бронирует удобное время и безопасно оплачивает. Исполнитель получает поток новых клиентов и гарантированную оплату.",
+                faq2_q: "Как забронировать услугу?",
+                faq2_a: 'Выберите понравившуюся услугу, нажмите кнопку «Забронировать» и выберите удобное время в календаре. После этого можно произвести оплату.',
+                faq3_q: "Есть ли гарантия безопасности оплаты?",
+                faq3_a: "Да, система Hidmat работает по модели Escrow. После оплаты деньги поступают не исполнителю, а на защищённый счёт Hidmat — и переводятся только по завершении услуги.",
+                faq4_q: "Как зарегистрироваться как исполнитель?",
+                faq4_a: 'Нажмите кнопку «Стать исполнителем», выберите свою специализацию и заполните анкету. Наши менеджеры свяжутся с вами в течение 24 часов.',
+                faq5_q: "Какие виды услуг охватывает Hidmat?",
+                faq5_a: "Начальные направления — ремонт, красота, репетиторство и IT. По мере развития платформы будут добавляться новые сферы.",
+                faq6_q: "Когда запустится проект?",
+                faq6_a: "Hidmat сейчас готовится к запуску. Записавшиеся в очередь первыми попробуют платформу и получат специальные привилегии (кешбэк, бесплатный оффер).",
+                faq7_q: "Платное ли использование сервиса?",
+                faq7_a: "Регистрация и поиск услуг для клиентов бесплатны. С исполнителей взимается небольшая комиссия только за успешно выполненные заказы — подробные условия будут объявлены при запуске.",
+                faq8_q: "Будет ли мобильное приложение?",
+                faq8_a: "Да, Hidmat в первую очередь будет работать как удобное мобильное приложение — просмотр услуг через Reels, бронирование и оплата осуществляются в несколько нажатий.",
+                faq9_q: "Что если я недоволен качеством услуги?",
+                faq9_a: "Ваша оплата хранится в системе Escrow и переводится только после качественного завершения услуги. В случае спора служба поддержки Hidmat поможет справедливо разрешить его.",
+                wl_title: "Запишитесь в очередь",
+                wl_desc: "Будьте среди первых пользователей и получите до 20% кешбэка на услуги.",
+                wl_role_label: "Кто вы?",
+                wl_role1: "Покупатель услуг",
+                wl_role2: "Исполнитель услуг",
+                wl_ph_firstname: "Имя",
+                wl_ph_lastname: "Фамилия",
+                wl_field_label: "Какие сферы вас интересуют?",
+                wl_field_label_seller: "В какой сфере вы работаете?",
+                wl_field_label_buyer: "В каких сферах хотите получить услуги?",
+                wl_fields_placeholder: "Выберите сферы",
+                wl_ph_email: "Ваш email",
+                wl_ph_contact: "Номер телефона или Telegram",
+                wl_submit: "Отправить",
+                wl_sending: "Отправляется...",
+                wl_success: "Спасибо! Вы успешно записаны в очередь. ✓",
+                wl_done: "Записаны ✓",
+                wl_error: "Произошла ошибка. Пожалуйста, попробуйте позже.",
+                err_role: "Пожалуйста, укажите, покупатель вы или исполнитель.",
+                err_firstname: "Пожалуйста, введите ваше имя.",
+                err_lastname: "Пожалуйста, введите вашу фамилию.",
+                err_fields: "Пожалуйста, выберите хотя бы одну сферу.",
+                err_email: "Пожалуйста, введите корректный email.",
+                err_contact: "Пожалуйста, введите номер телефона или Telegram.",
+                footer_desc: "Первая экосистема премиум-услуг в Узбекистане. Мы ставим качество и доверие на первое место.",
+                footer_link1: "О нас",
+                footer_link2: "Портал исполнителя",
+                footer_link3: "Написать в поддержку",
+                footer_legal: "Правовая информация",
+                footer_sec: "Безопасность",
+                footer_pp: "Политика конфиденциальности",
+                footer_tos: "Условия использования",
+                footer_social: "Социальные сети",
+                footer_copyright: "© 2026 Hidmat. Платформа услуг в Узбекистане."
+            }
+        };
+
+        let currentLang = localStorage.getItem('hidmat_lang') || 'uz';
+
+        function applyLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('hidmat_lang', lang);
+            document.documentElement.lang = lang;
+            document.getElementById('lang-btn').textContent = lang === 'uz' ? 'RU' : 'UZ';
+
+            // Translate text elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (T[lang][key] !== undefined) el.textContent = T[lang][key];
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.dataset.i18nPh;
+                if (T[lang][key] !== undefined) el.placeholder = T[lang][key];
+            });
+
+            // Update page title
+            document.title = T[lang]['page_title'];
+
+            // Update fields dropdown placeholder if no items selected
+            const ddSummary = document.getElementById('wl-fields-summary');
+            const checked = document.querySelectorAll('input[name="fields"]:checked');
+            if (checked.length === 0 && ddSummary) {
+                ddSummary.textContent = T[lang]['wl_fields_placeholder'];
+            }
+        }
+
+        // Lang button toggle
+        document.getElementById('lang-btn').addEventListener('click', () => {
+            applyLang(currentLang === 'uz' ? 'ru' : 'uz');
+        });
+
+        // Apply saved lang on load
+        applyLang(currentLang);
+
+        // ============================================================
+        //  WAITLIST SOZLAMASI
+        // ============================================================
+        const WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbwRGf7ZnJxnliFD2xZq_GXz6bw-MI_KogBOPzAkRwVllyt_GT3OYwCeJ7gufzxAelI/exec";
 
         // Asosiy tugmalar -> formaga silliq o'tish
         document.querySelectorAll('[data-scroll-waitlist]').forEach(btn => {
@@ -637,11 +936,13 @@
             const fieldLabel = document.getElementById('wl-field-label');
             const getRole = () => (form.querySelector('input[name="role"]:checked') || {}).value || '';
             const getFields = () => Array.from(form.querySelectorAll('input[name="fields"]:checked')).map(c => c.value);
-            // Rolga qarab soha sarlavhasini yangilash
+
             form.querySelectorAll('input[name="role"]').forEach(r => r.addEventListener('change', () => {
-                fieldLabel.textContent = (getRole() === 'Xizmat sotuvchi')
-                    ? 'Qaysi sohada ishlaysiz?'
-                    : 'Qaysi sohalarda xizmat olmoqchisiz?';
+                const role = getRole();
+                const isSeller = (role === 'Xizmat sotuvchi' || role === T['uz']['wl_role2'] || role === T['ru']['wl_role2']);
+                fieldLabel.textContent = isSeller
+                    ? T[currentLang]['wl_field_label_seller']
+                    : T[currentLang]['wl_field_label_buyer'];
             }));
 
             // Sohalar dropdown menyusi
@@ -652,7 +953,7 @@
             function updateFieldsSummary() {
                 const sel = getFields();
                 if (sel.length === 0) {
-                    ddSummary.textContent = 'Sohalarni tanlang';
+                    ddSummary.textContent = T[currentLang]['wl_fields_placeholder'];
                     ddSummary.classList.add('text-white/50');
                     ddSummary.classList.remove('text-white');
                 } else {
@@ -679,6 +980,7 @@
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
+                const lang = currentLang;
                 const role = getRole();
                 const firstName = firstNameInput.value.trim();
                 const lastName = lastNameInput.value.trim();
@@ -686,54 +988,28 @@
                 const email = emailInput.value.trim();
                 const contact = contactInput.value.trim();
 
-                if (!role) {
-                    showStatus("Iltimos, xizmat sotib oluvchi yoki sotuvchi ekaningizni tanlang.", 'error');
-                    return;
-                }
-                if (!firstName) {
-                    showStatus("Iltimos, ismingizni kiriting.", 'error');
-                    firstNameInput.focus();
-                    return;
-                }
-                if (!lastName) {
-                    showStatus("Iltimos, familiyangizni kiriting.", 'error');
-                    lastNameInput.focus();
-                    return;
-                }
-                if (fields.length === 0) {
-                    showStatus("Iltimos, kamida bitta sohani tanlang.", 'error');
-                    return;
-                }
-                if (!validEmail(email)) {
-                    showStatus("Iltimos, to'g'ri email manzil kiriting.", 'error');
-                    emailInput.focus();
-                    return;
-                }
-                if (!contact) {
-                    showStatus("Iltimos, telefon raqam yoki Telegram username kiriting.", 'error');
-                    contactInput.focus();
-                    return;
-                }
+                if (!role) { showStatus(T[lang]['err_role'], 'error'); return; }
+                if (!firstName) { showStatus(T[lang]['err_firstname'], 'error'); firstNameInput.focus(); return; }
+                if (!lastName) { showStatus(T[lang]['err_lastname'], 'error'); lastNameInput.focus(); return; }
+                if (fields.length === 0) { showStatus(T[lang]['err_fields'], 'error'); return; }
+                if (!validEmail(email)) { showStatus(T[lang]['err_email'], 'error'); emailInput.focus(); return; }
+                if (!contact) { showStatus(T[lang]['err_contact'], 'error'); contactInput.focus(); return; }
 
                 submitBtn.disabled = true;
                 const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Yuborilmoqda...';
+                submitBtn.textContent = T[lang]['wl_sending'];
 
                 const payload = {
-                    role: role,
-                    firstName: firstName,
-                    lastName: lastName,
+                    role, firstName, lastName,
                     fields: fields.join(', '),
-                    email: email,
-                    contact: contact,
+                    email, contact,
+                    lang,
                     timestamp: new Date().toISOString(),
                     source: 'landing'
                 };
 
                 try {
                     if (WAITLIST_ENDPOINT) {
-                        // Google Apps Script web app'ga yuborish.
-                        // no-cors: javobni o'qiy olmaymiz, lekin yozuv jadvalga tushadi.
                         await fetch(WAITLIST_ENDPOINT, {
                             method: 'POST',
                             mode: 'no-cors',
@@ -741,27 +1017,38 @@
                             body: JSON.stringify(payload)
                         });
                     } else {
-                        // TEST REJIM: brauzer xotirasiga saqlab qo'yamiz
                         const stored = JSON.parse(localStorage.getItem('waitlist') || '[]');
                         stored.push(payload);
                         localStorage.setItem('waitlist', JSON.stringify(stored));
-                        console.log('[TEST REJIM] Yozildi:', payload, '| Jami:', stored.length);
                     }
 
                     form.reset();
-                    fieldLabel.textContent = 'Qaysi soha(lar) sizni qiziqtiradi?';
+                    fieldLabel.textContent = T[currentLang]['wl_field_label'];
                     updateFieldsSummary();
                     ddPanel.classList.add('hidden');
-                    showStatus("Rahmat! Siz navbatga muvaffaqiyatli yozildingiz. ✓", 'success');
-                    submitBtn.textContent = 'Yozildingiz ✓';
+                    showStatus(T[currentLang]['wl_success'], 'success');
+                    submitBtn.textContent = T[currentLang]['wl_done'];
                 } catch (err) {
                     console.error(err);
-                    showStatus("Xatolik yuz berdi. Iltimos, birozdan so'ng qayta urinib ko'ring.", 'error');
+                    showStatus(T[currentLang]['wl_error'], 'error');
                     submitBtn.disabled = false;
                     submitBtn.textContent = originalText;
                 }
             });
         })();
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Close on link click
+            mobileMenu.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
 
         // Navbar soya effekti
         window.addEventListener('scroll', () => {
